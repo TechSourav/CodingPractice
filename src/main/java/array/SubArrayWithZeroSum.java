@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-// Check if a subarray with 0 sum exists or not
+// check if it contains a subarray having zero-sum
 public class SubArrayWithZeroSum {
 
     /*public static void main(String[] args) {

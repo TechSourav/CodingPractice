@@ -1,8 +1,6 @@
 package array;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 // Find maximum length subarray having a given sum
@@ -92,7 +90,7 @@ public class MaxLengthSubArray {
         int target = 0;
 
         // `len` stores the maximum length of subarray with sum `S`
-        int len = 0;
+        int maxLen = 0;
 
         // stores ending index of the maximum length subarray having sum `S`
         int ending_index = -1;
@@ -109,22 +107,22 @@ public class MaxLengthSubArray {
 
             // update length and ending index of the maximum length subarray
             // having sum `S`
-            if (map.containsKey(target - S) && len < i - map.get(target - S))
+            if (map.containsKey(target - S) && maxLen < i - map.get(target - S))
             {
-                len = i - map.get(target - S);
+                maxLen = i - map.get(target - S);
                 ending_index = i;
             }
         }
 
         // print the subarray
-        System.out.println("Max length: " + len);
-        System.out.println("[" + (ending_index - len + 1) + ", " + ending_index + "]");
+        System.out.println("Max length: " + maxLen);
+        System.out.println("[" + (ending_index - maxLen + 1) + ", " + ending_index + "]");
     }
 
     public static void main (String[] args)
     {
         int[] nums = { -5, 8, -14, 2, 4, 12 };
-        int target = -5;
+        int target = -6;
 
         findMaxLenSubarray(nums, target);
     }
